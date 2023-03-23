@@ -30,7 +30,8 @@ var SectionBlocks = [
         title:"Completed",
         symbol:"checkmark.circle.fill",
         foreGroundColor: .secondary,
-        number: 0
+        number: 0,
+        showNumber: false
     )
 ]
 
@@ -48,7 +49,7 @@ struct MainView: View {
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
                                 NavigationLink(destination: TodayView()){SectionBlocks[0]}
                                 NavigationLink(destination: PlanView()){SectionBlocks[1]}
-                                NavigationLink(destination: TodayView()){SectionBlocks[2]}
+                                NavigationLink(destination: AllView()){SectionBlocks[2]}
                                 NavigationLink(destination: CompleteView()){SectionBlocks[3]}
                             }
                             .frame(width: g.size.width,height: g.size.height-550)
@@ -91,18 +92,26 @@ struct SearchBarView:View{
 }
 
 struct mainBottomView:View{
+    @State var sheetIsPresented:Bool = false
+    @State var sheet2IsPresented:Bool = false
     var body: some View{
         HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.sheetIsPresented = true
+            }, label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.title)
                 Text("New event")
                     .font(.title2)
                     .bold()
             })
+            .sheet(isPresented: self.$sheetIsPresented){
+                AddListSheetView(isSheetPreseted: self.$sheetIsPresented)
+            }
             Spacer()
-            Button("Add list", action: {})
+            Button("Add list", action: {self.sheet2IsPresented = true})
                 .font(.title2)
+                .sheet(isPresented: self.$sheet2IsPresented){AddNewListView(isSheet: self.$sheet2IsPresented)}
         }
     }
 }

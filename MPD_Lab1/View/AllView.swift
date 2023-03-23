@@ -12,14 +12,11 @@ struct AllView: View {
         GeometryReader{g in
             VStack(alignment: .leading){
                 Text("All").bold().font(.largeTitle)
-                    .frame(height: 40)
+                    .frame(height: 40).padding(5)
+                Text("Remind").padding(5).foregroundColor(.blue).bold()
                 Divider()
-                dayTimeView(timeName: "morning")
+                Text("Camping").padding(5).foregroundColor(.green).bold()
                 Divider()
-                dayTimeView(timeName: "noon")
-                Divider()
-                dayTimeView(timeName: "afternoon")
-                
             }
         }
     }

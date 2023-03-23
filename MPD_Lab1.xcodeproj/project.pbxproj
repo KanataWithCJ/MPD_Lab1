@@ -16,6 +16,9 @@
 		0F61BD4A29CAA1D200656D18 /* dayTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4929CAA1D200656D18 /* dayTimeView.swift */; };
 		0F61BD4C29CAAA2300656D18 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4B29CAAA2300656D18 /* CompleteView.swift */; };
 		0F61BD4E29CBCE2400656D18 /* AllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4D29CBCE2400656D18 /* AllView.swift */; };
+		0F61BD5029CBD5A600656D18 /* AddListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */; };
+		0F61BD5229CC206B00656D18 /* AddNewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5129CC206B00656D18 /* AddNewListView.swift */; };
+		0F61BD5629CC8D5D00656D18 /* NewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5529CC8D5D00656D18 /* NewListViewModel.swift */; };
 		0F7C325A29C1D89400A75914 /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325929C1D89400A75914 /* RemindView.swift */; };
 		0F7C325C29C1F06C00A75914 /* CampingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325B29C1F06C00A75914 /* CampingView.swift */; };
 		0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */; };
@@ -34,6 +37,9 @@
 		0F61BD4929CAA1D200656D18 /* dayTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayTimeView.swift; sourceTree = "<group>"; };
 		0F61BD4B29CAAA2300656D18 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		0F61BD4D29CBCE2400656D18 /* AllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllView.swift; sourceTree = "<group>"; };
+		0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListSheetView.swift; sourceTree = "<group>"; };
+		0F61BD5129CC206B00656D18 /* AddNewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewListView.swift; sourceTree = "<group>"; };
+		0F61BD5529CC8D5D00656D18 /* NewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewModel.swift; sourceTree = "<group>"; };
 		0F7C325929C1D89400A75914 /* RemindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
 		0F7C325B29C1F06C00A75914 /* CampingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingView.swift; sourceTree = "<group>"; };
 		0F8C092529C1A85E004FC24E /* MPD_Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPD_Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,8 @@
 				0F61BD4729CAA16300656D18 /* PlanView.swift */,
 				0F61BD4B29CAAA2300656D18 /* CompleteView.swift */,
 				0F61BD4D29CBCE2400656D18 /* AllView.swift */,
+				0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */,
+				0F61BD5129CC206B00656D18 /* AddNewListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -74,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0F61BD4329C9A4A700656D18 /* MainViewModel.swift */,
+				0F61BD5529CC8D5D00656D18 /* NewListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,8 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F61BD5029CBD5A600656D18 /* AddListSheetView.swift in Sources */,
 				0F61BD4E29CBCE2400656D18 /* AllView.swift in Sources */,
 				0F61BD3D29C9A12C00656D18 /* MyListView.swift in Sources */,
+				0F61BD5629CC8D5D00656D18 /* NewListViewModel.swift in Sources */,
 				0F8C092B29C1A85E004FC24E /* MainView.swift in Sources */,
 				0F7C325A29C1D89400A75914 /* RemindView.swift in Sources */,
 				0F61BD4229C9A27400656D18 /* MainModel.swift in Sources */,
@@ -205,6 +216,7 @@
 				0F61BD4A29CAA1D200656D18 /* dayTimeView.swift in Sources */,
 				0F61BD3B29C9A08C00656D18 /* SectionBlockView.swift in Sources */,
 				0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */,
+				0F61BD5229CC206B00656D18 /* AddNewListView.swift in Sources */,
 				0F61BD4429C9A4A700656D18 /* MainViewModel.swift in Sources */,
 				0F61BD4829CAA16300656D18 /* PlanView.swift in Sources */,
 			);

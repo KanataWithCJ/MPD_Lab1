@@ -48,32 +48,32 @@ var remindList = [
         img:"list.bullet.circle.fill",
         num: 1,
         foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
 //    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+////    MainModel.RemindListItem(
 //        name:"Remind",
 //        img:"list.bullet.circle.fill",
 //        num: 1,
