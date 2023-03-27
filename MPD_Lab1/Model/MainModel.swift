@@ -18,36 +18,36 @@ var remindList = [
         img:"list.bullet.circle.fill",
         num: 1,
         foreGroundColor: .blue),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .orange),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
-    MainModel.RemindListItem(
-        name:"Remind",
-        img:"list.bullet.circle.fill",
-        num: 1,
-        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .orange),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
+//    MainModel.RemindListItem(
+//        name:"Remind",
+//        img:"list.bullet.circle.fill",
+//        num: 1,
+//        foreGroundColor: .purple),
 //    MainModel.RemindListItem(
 //        name:"Remind",
 //        img:"list.bullet.circle.fill",

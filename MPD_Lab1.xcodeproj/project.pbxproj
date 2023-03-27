@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F61BD3B29C9A08C00656D18 /* SectionBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD3A29C9A08C00656D18 /* SectionBlockView.swift */; };
-		0F61BD3D29C9A12C00656D18 /* MyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD3C29C9A12C00656D18 /* MyListView.swift */; };
+		0F61BD3B29C9A08C00656D18 /* CategoricalBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD3A29C9A08C00656D18 /* CategoricalBlockView.swift */; };
 		0F61BD4229C9A27400656D18 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4129C9A27400656D18 /* MainModel.swift */; };
 		0F61BD4429C9A4A700656D18 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4329C9A4A700656D18 /* MainViewModel.swift */; };
 		0F61BD4629C9EF5400656D18 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4529C9EF5400656D18 /* TodayView.swift */; };
@@ -16,20 +15,22 @@
 		0F61BD4A29CAA1D200656D18 /* dayTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4929CAA1D200656D18 /* dayTimeView.swift */; };
 		0F61BD4C29CAAA2300656D18 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4B29CAAA2300656D18 /* CompleteView.swift */; };
 		0F61BD4E29CBCE2400656D18 /* AllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4D29CBCE2400656D18 /* AllView.swift */; };
-		0F61BD5029CBD5A600656D18 /* AddListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */; };
-		0F61BD5229CC206B00656D18 /* AddNewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5129CC206B00656D18 /* AddNewListView.swift */; };
+		0F61BD5029CBD5A600656D18 /* NewRemindSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD4F29CBD5A600656D18 /* NewRemindSheetView.swift */; };
+		0F61BD5229CC206B00656D18 /* NewListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5129CC206B00656D18 /* NewListSheetView.swift */; };
 		0F61BD5629CC8D5D00656D18 /* NewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5529CC8D5D00656D18 /* NewListViewModel.swift */; };
-		0F7C325A29C1D89400A75914 /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325929C1D89400A75914 /* RemindView.swift */; };
-		0F7C325C29C1F06C00A75914 /* CampingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325B29C1F06C00A75914 /* CampingView.swift */; };
+		0F61BD5829D176C400656D18 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5729D176C400656D18 /* test.swift */; };
+		0F61BD5A29D180B600656D18 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5929D180B600656D18 /* MainPageView.swift */; };
+		0F61BD5D29D1875F00656D18 /* MyListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5C29D1875F00656D18 /* MyListEntity.swift */; };
+		0F61BD5F29D1880E00656D18 /* MyNewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BD5E29D1880E00656D18 /* MyNewListView.swift */; };
+		0F7C325A29C1D89400A75914 /* RemindPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325929C1D89400A75914 /* RemindPageView.swift */; };
+		0F7C325C29C1F06C00A75914 /* CampingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325B29C1F06C00A75914 /* CampingPageView.swift */; };
 		0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */; };
-		0F8C092B29C1A85E004FC24E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C092A29C1A85E004FC24E /* MainView.swift */; };
 		0F8C092D29C1A860004FC24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092C29C1A860004FC24E /* Assets.xcassets */; };
 		0F8C093029C1A860004FC24E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092F29C1A860004FC24E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F61BD3A29C9A08C00656D18 /* SectionBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBlockView.swift; sourceTree = "<group>"; };
-		0F61BD3C29C9A12C00656D18 /* MyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListView.swift; sourceTree = "<group>"; };
+		0F61BD3A29C9A08C00656D18 /* CategoricalBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoricalBlockView.swift; sourceTree = "<group>"; };
 		0F61BD4129C9A27400656D18 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		0F61BD4329C9A4A700656D18 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0F61BD4529C9EF5400656D18 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -37,14 +38,17 @@
 		0F61BD4929CAA1D200656D18 /* dayTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayTimeView.swift; sourceTree = "<group>"; };
 		0F61BD4B29CAAA2300656D18 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		0F61BD4D29CBCE2400656D18 /* AllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllView.swift; sourceTree = "<group>"; };
-		0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListSheetView.swift; sourceTree = "<group>"; };
-		0F61BD5129CC206B00656D18 /* AddNewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewListView.swift; sourceTree = "<group>"; };
+		0F61BD4F29CBD5A600656D18 /* NewRemindSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRemindSheetView.swift; sourceTree = "<group>"; };
+		0F61BD5129CC206B00656D18 /* NewListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListSheetView.swift; sourceTree = "<group>"; };
 		0F61BD5529CC8D5D00656D18 /* NewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewModel.swift; sourceTree = "<group>"; };
-		0F7C325929C1D89400A75914 /* RemindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
-		0F7C325B29C1F06C00A75914 /* CampingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingView.swift; sourceTree = "<group>"; };
+		0F61BD5729D176C400656D18 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		0F61BD5929D180B600656D18 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		0F61BD5C29D1875F00656D18 /* MyListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListEntity.swift; sourceTree = "<group>"; };
+		0F61BD5E29D1880E00656D18 /* MyNewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewListView.swift; sourceTree = "<group>"; };
+		0F7C325929C1D89400A75914 /* RemindPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindPageView.swift; sourceTree = "<group>"; };
+		0F7C325B29C1F06C00A75914 /* CampingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingPageView.swift; sourceTree = "<group>"; };
 		0F8C092529C1A85E004FC24E /* MPD_Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPD_Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPD_Lab1App.swift; sourceTree = "<group>"; };
-		0F8C092A29C1A85E004FC24E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0F8C092C29C1A860004FC24E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F8C092F29C1A860004FC24E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,17 +67,12 @@
 		0F61BD3E29C9A15B00656D18 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0F7C325929C1D89400A75914 /* RemindView.swift */,
-				0F61BD3A29C9A08C00656D18 /* SectionBlockView.swift */,
-				0F61BD3C29C9A12C00656D18 /* MyListView.swift */,
-				0F7C325B29C1F06C00A75914 /* CampingView.swift */,
 				0F61BD4529C9EF5400656D18 /* TodayView.swift */,
 				0F61BD4929CAA1D200656D18 /* dayTimeView.swift */,
 				0F61BD4729CAA16300656D18 /* PlanView.swift */,
 				0F61BD4B29CAAA2300656D18 /* CompleteView.swift */,
 				0F61BD4D29CBCE2400656D18 /* AllView.swift */,
-				0F61BD4F29CBD5A600656D18 /* AddListSheetView.swift */,
-				0F61BD5129CC206B00656D18 /* AddNewListView.swift */,
+				0F61BD5729D176C400656D18 /* test.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,9 +89,18 @@
 		0F61BD4029C9A1A200656D18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F61BD5B29D1874B00656D18 /* Entity */,
 				0F61BD4129C9A27400656D18 /* MainModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0F61BD5B29D1874B00656D18 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0F61BD5C29D1875F00656D18 /* MyListEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		0F8C091C29C1A85E004FC24E = {
@@ -118,9 +126,15 @@
 				0F61BD3F29C9A19900656D18 /* ViewModel */,
 				0F61BD3E29C9A15B00656D18 /* View */,
 				0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */,
-				0F8C092A29C1A85E004FC24E /* MainView.swift */,
+				0F61BD5929D180B600656D18 /* MainPageView.swift */,
 				0F8C092C29C1A860004FC24E /* Assets.xcassets */,
 				0F8C092E29C1A860004FC24E /* Preview Content */,
+				0F61BD5E29D1880E00656D18 /* MyNewListView.swift */,
+				0F61BD3A29C9A08C00656D18 /* CategoricalBlockView.swift */,
+				0F61BD4F29CBD5A600656D18 /* NewRemindSheetView.swift */,
+				0F61BD5129CC206B00656D18 /* NewListSheetView.swift */,
+				0F7C325929C1D89400A75914 /* RemindPageView.swift */,
+				0F7C325B29C1F06C00A75914 /* CampingPageView.swift */,
 			);
 			path = MPD_Lab1;
 			sourceTree = "<group>";
@@ -203,21 +217,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F61BD5029CBD5A600656D18 /* AddListSheetView.swift in Sources */,
+				0F61BD5029CBD5A600656D18 /* NewRemindSheetView.swift in Sources */,
+				0F61BD5829D176C400656D18 /* test.swift in Sources */,
 				0F61BD4E29CBCE2400656D18 /* AllView.swift in Sources */,
-				0F61BD3D29C9A12C00656D18 /* MyListView.swift in Sources */,
+				0F61BD5F29D1880E00656D18 /* MyNewListView.swift in Sources */,
 				0F61BD5629CC8D5D00656D18 /* NewListViewModel.swift in Sources */,
-				0F8C092B29C1A85E004FC24E /* MainView.swift in Sources */,
-				0F7C325A29C1D89400A75914 /* RemindView.swift in Sources */,
+				0F7C325A29C1D89400A75914 /* RemindPageView.swift in Sources */,
 				0F61BD4229C9A27400656D18 /* MainModel.swift in Sources */,
+				0F61BD5A29D180B600656D18 /* MainPageView.swift in Sources */,
 				0F61BD4629C9EF5400656D18 /* TodayView.swift in Sources */,
 				0F61BD4C29CAAA2300656D18 /* CompleteView.swift in Sources */,
-				0F7C325C29C1F06C00A75914 /* CampingView.swift in Sources */,
+				0F7C325C29C1F06C00A75914 /* CampingPageView.swift in Sources */,
 				0F61BD4A29CAA1D200656D18 /* dayTimeView.swift in Sources */,
-				0F61BD3B29C9A08C00656D18 /* SectionBlockView.swift in Sources */,
+				0F61BD3B29C9A08C00656D18 /* CategoricalBlockView.swift in Sources */,
 				0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */,
-				0F61BD5229CC206B00656D18 /* AddNewListView.swift in Sources */,
+				0F61BD5229CC206B00656D18 /* NewListSheetView.swift in Sources */,
 				0F61BD4429C9A4A700656D18 /* MainViewModel.swift in Sources */,
+				0F61BD5D29D1875F00656D18 /* MyListEntity.swift in Sources */,
 				0F61BD4829CAA16300656D18 /* PlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

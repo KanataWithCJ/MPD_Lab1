@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct AddListSheetView: View {
+struct NewRemindSheetView: View {
     @State var ititle:String=""
     @State var inote:String=""
-    @Binding var isSheetPreseted:Bool
+    @Binding var isSheetPresented:Bool
     var body: some View {
         NavigationStack{
             VStack{
                 HStack{
-                    Button("cancel"){isSheetPreseted = false}
+                    Button("cancel"){isSheetPresented = false}
                     Spacer()
                     Text("New Remind Item")
                     Spacer()

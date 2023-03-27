@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct AddNewListView: View {
-    @Binding var isSheet:Bool
+struct NewListSheetView: View {
+    @Binding var isSheetPresented:Bool
     var colorlist:[Color] = [.red,.orange,.yellow,.green,.blue,.purple,.brown]
     @ObservedObject var newListviewmodel = NewListViewModel()
     @State var inputListName:String = ""
@@ -17,7 +17,7 @@ struct AddNewListView: View {
             GeometryReader{_ in
                 VStack{
                     HStack{
-                        Button("cancel"){self.isSheet = false}
+                        Button("cancel"){self.isSheetPresented = false}
                         Spacer()
                         Text("New List")
                         Spacer()

@@ -1,5 +1,5 @@
 //
-//  CampingView.swift
+//  RemindView.swift
 //  MPD_Lab1
 //
 //  Created by 从径源 on 2023/3/15.
@@ -7,23 +7,17 @@
 
 import SwiftUI
 
-struct CampingView: View {
+struct RemindPageView: View {
     var body: some View {
         VStack{
             ScrollView{
-                Text("Camping")
+                Text("Reminders")
                     .font(.largeTitle)
-                    .foregroundColor(.green)
+                    .foregroundColor(.blue)
                     .bold()
                     .frame(width: 370,alignment: .leading)
-                Text("Shared with Luncna and Yang&8 friends")
-                    .font(.body)
-                    .foregroundColor(.gray)
-                    .bold()
-                    .frame(width:370,alignment: .leading)
-                    .padding(.bottom,10)
                 Divider()
-                CampingListView()
+                RemindListView()
             }
             HStack{
                 Button(action: {}, label: {
@@ -36,13 +30,12 @@ struct CampingView: View {
                 .padding()
                 Spacer()
             }
-            .foregroundColor(.green)
         }
         
     }
 }
 
-struct CampingItem:View{
+struct RemindItem:View{
     var title:String = "Facetime Grandma"
     var subtitle:String = "Today 5:00PM weekly"
     var hashtag:String = "#family"
@@ -54,7 +47,7 @@ struct CampingItem:View{
                     Image(systemName: "circle.fill")
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Color.green)
+                        .foregroundColor(Color.blue)
                         .font(.title2)
                         .frame(height: 50)
                 }else{
@@ -88,14 +81,14 @@ struct CampingItem:View{
     }
 }
 
-struct CampingListView:View{
+struct RemindListView:View{
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.white)
             LazyVStack{
-                ForEach(0..<20){_ in
-                    CampingItem()
+                ForEach(0..<4){_ in
+                    RemindItem()
                 }
             }
         }
@@ -105,8 +98,8 @@ struct CampingListView:View{
 
 
 
-struct CampingView_Previews: PreviewProvider {
+struct RemindView_Previews: PreviewProvider {
     static var previews: some View {
-        CampingView()
+        RemindPageView()
     }
 }
