@@ -27,6 +27,7 @@
 		0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */; };
 		0F8C092D29C1A860004FC24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092C29C1A860004FC24E /* Assets.xcassets */; };
 		0F8C093029C1A860004FC24E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092F29C1A860004FC24E /* Preview Assets.xcassets */; };
+		0F962BD829D1CB8100305FEE /* MyBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BD729D1CB8100305FEE /* MyBlockEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPD_Lab1App.swift; sourceTree = "<group>"; };
 		0F8C092C29C1A860004FC24E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F8C092F29C1A860004FC24E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F962BD729D1CB8100305FEE /* MyBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				0F61BD5C29D1875F00656D18 /* MyListEntity.swift */,
+				0F962BD729D1CB8100305FEE /* MyBlockEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				0F7C325A29C1D89400A75914 /* RemindPageView.swift in Sources */,
 				0F61BD4229C9A27400656D18 /* MainModel.swift in Sources */,
 				0F61BD5A29D180B600656D18 /* MainPageView.swift in Sources */,
+				0F962BD829D1CB8100305FEE /* MyBlockEntity.swift in Sources */,
 				0F61BD4629C9EF5400656D18 /* TodayView.swift in Sources */,
 				0F61BD4C29CAAA2300656D18 /* CompleteView.swift in Sources */,
 				0F7C325C29C1F06C00A75914 /* CampingPageView.swift in Sources */,

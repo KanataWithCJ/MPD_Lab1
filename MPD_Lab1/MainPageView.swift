@@ -10,7 +10,9 @@ import SwiftUI
 struct MainPageView: View {
     @State var isNewRemindItemSheetOn:Bool = false
     @State var isNewListSheetOn:Bool = false
+    @State var isEditMode = false
     @State var searchInfo:String = ""
+    
     var body: some View {
         NavigationStack{
             VStack(){
@@ -29,9 +31,7 @@ struct MainPageView: View {
             }
             .toolbar{
                 ToolbarItem(placement:.automatic){
-                    Button(action: {}){
-                        Text("Edit")
-                    }
+                    EditButton()
                 }
                 ToolbarItem(placement: .bottomBar){
                     HStack{
