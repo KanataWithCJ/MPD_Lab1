@@ -15,17 +15,16 @@ struct MainPageView: View {
     
     var body: some View {
         NavigationStack{
-            VStack(){
+            VStack{
                 HStack{
                     Image(systemName: "magnifyingglass").foregroundColor(.gray).padding(.leading,5)
                     TextField("搜索", text: $searchInfo)
                 }
                 .frame(height: 35)
-                .background(Color(red: 0.949, green: 0.949, blue: 0.971))
+                .background(Color(UIColor.systemGray5))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 
-                // My List View
                 MyNewListView()
                 Spacer()
             }
@@ -53,7 +52,10 @@ struct MainPageView: View {
                     }
                 }
             }
-        }.navigationTitle("列表")
+            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.949, green: 0.949, blue: 0.971)/*@END_MENU_TOKEN@*/)
+            .navigationTitle("列表")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

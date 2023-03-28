@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RemindPageView: View {
+    @State var inputList:[inputItemEntity] = []
     var body: some View {
         VStack{
             ScrollView{
@@ -17,10 +18,17 @@ struct RemindPageView: View {
                     .bold()
                     .frame(width: 370,alignment: .leading)
                 Divider()
-                RemindListView()
+                ForEach($inputList){ list in
+                    listInputView(id: list.id, inputtext: list.text, inputnote: list.note, inputList: self.$inputList)
+                }
+                
+            }.onTapGesture {
+                if self.inputList.count == 0{
+                    self.inputList.append(inputItemEntity(id: self.inputList.count, text: "", note: ""))
+                }
             }
             HStack{
-                Button(action: {}, label: {
+                Button(action: {self.inputList.append(inputItemEntity(id: self.inputList.count, text: "", note: ""))}, label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.title)
                     Text("New event")
@@ -34,69 +42,6 @@ struct RemindPageView: View {
         
     }
 }
-
-struct RemindItem:View{
-    var title:String = "Facetime Grandma"
-    var subtitle:String = "Today 5:00PM weekly"
-    var hashtag:String = "#family"
-    @State var IsOn:Bool = false
-    var body: some View{
-        HStack{
-            Button(action: {IsOn.toggle()}, label: {
-                if IsOn{
-                    Image(systemName: "circle.fill")
-                        .renderingMode(.template)
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Color.blue)
-                        .font(.title2)
-                        .frame(height: 50)
-                }else{
-                    Image(systemName: "circle")
-                        .renderingMode(.template)
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(Color.gray)
-                        .font(.title2)
-                        .frame(height: 50)
-                }
-            })
-            
-            VStack{
-                VStack{
-                    Text(title)
-                        .font(.title2)
-                    HStack{
-                        Text(subtitle)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        Text(hashtag)
-                            .font(.caption)
-                            .foregroundColor(.blue)
-                    }
-                }
-                .frame(width: 360,alignment: .leading)
-                Divider()
-            }
-        }
-        .frame(width: 380,alignment: .leading)
-    }
-}
-
-struct RemindListView:View{
-    var body: some View{
-        ZStack{
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.white)
-            LazyVStack{
-                ForEach(0..<4){_ in
-                    RemindItem()
-                }
-            }
-        }
-        .frame(width: 350)
-    }
-}
-
-
 
 struct RemindView_Previews: PreviewProvider {
     static var previews: some View {

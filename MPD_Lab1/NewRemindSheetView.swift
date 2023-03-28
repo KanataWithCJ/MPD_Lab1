@@ -12,15 +12,8 @@ struct NewRemindSheetView: View {
     @State var inote:String=""
     @Binding var isSheetPresented:Bool
     var body: some View {
-        NavigationStack{
+        NavigationView{
             VStack{
-                HStack{
-                    Button("cancel"){isSheetPresented = false}
-                    Spacer()
-                    Text("New Remind Item")
-                    Spacer()
-                    Button("Add"){}
-                }.padding()
                 ZStack{
                     GeometryReader{_ in
                         RoundedRectangle(cornerRadius: 10).foregroundColor(.white)
@@ -34,17 +27,23 @@ struct NewRemindSheetView: View {
                 
                 Form{
                     Section{
-                        List{
-                            NavigationLink(destination:{}){Text("Information")}
-                        }
+                        NavigationLink(destination:{InfoPage()}){Text("详细信息")}
                     }
                     Section{
-                        List{
-                            NavigationLink(destination:{}){Text("Information")}
-                        }
+                        NavigationLink(destination:{}){Text("列表")}
                     }
                 }
             }
+            .toolbar{
+                ToolbarItem(placement:.navigationBarLeading){
+                    Button("取消"){self.isSheetPresented = false}
+                }
+                ToolbarItem(placement:.navigationBarTrailing){
+                    Button("添加"){}
+                }
+            }
+            .navigationTitle("新提醒事项")
+            .navigationBarTitleDisplayMode(.inline)
             .background(Color(red: 0.949, green: 0.949, blue: 0.971))
         }
     }

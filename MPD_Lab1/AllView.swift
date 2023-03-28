@@ -13,9 +13,11 @@ struct AllView: View {
             VStack(alignment: .leading){
                 Text("All").bold().font(.largeTitle)
                     .frame(height: 40).padding(5)
-                Text("Remind").padding(5).foregroundColor(.blue).bold()
+//                Text("Remind").padding(5).foregroundColor(.blue).bold()
+                dayTimeView(timeName: "Remind", dFont: .body, buttonColor: .blue,textColor: .blue)
                 Divider()
-                Text("Camping").padding(5).foregroundColor(.green).bold()
+//                Text("Camping").padding(5).foregroundColor(.green).bold()
+                dayTimeView(timeName: "Camping", dFont: .body, buttonColor: .green,textColor: .green)
                 Divider()
             }
         }

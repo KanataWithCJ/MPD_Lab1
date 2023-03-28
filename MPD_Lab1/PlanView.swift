@@ -14,7 +14,7 @@ struct dayItem:Identifiable{
 }
 
 var dayList = [
-    dayItem(name: "Today", Dfont: .title),
+    dayItem(name: "Today",Dfont: .title),
     dayItem(name: "Tomorrow", Dfont: .title),
     dayItem(name: "Day after tomorrow", Dfont: .body),
     dayItem(name: "3.25 Saturday", Dfont: .body),
@@ -43,7 +43,8 @@ struct PlanView: View {
                     Text("Plan").bold().font(.largeTitle).foregroundColor(.red).frame(height: 40)
                     Group{
                         ForEach(dayList) { list in
-                            dayTimeView(timeName: list.name,dFont: list.Dfont)
+                            dayTimeView(timeName: list.name,dFont: list.Dfont,
+                                        buttonColor: .red)
                             Divider()
                         }
                     }

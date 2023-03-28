@@ -69,8 +69,8 @@ struct CircleItem:View{
             Circle().foregroundColor(forecolor).padding(.horizontal,5)
         }else{
             ZStack{
-                Circle().stroke(lineWidth: 10).foregroundColor(.gray)
-                Circle().foregroundColor(forecolor)
+                Circle().stroke(lineWidth: 5).frame(width: 50,height: 50).foregroundColor(.gray)
+                Circle().frame(width: 35,height: 35).foregroundColor(forecolor)
             }.padding(.horizontal,5)
         }
     }

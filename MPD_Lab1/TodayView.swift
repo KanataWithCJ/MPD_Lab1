@@ -9,17 +9,23 @@ import SwiftUI
 
 struct TodayView: View {
     var body: some View {
-        GeometryReader{g in
+        ScrollView{
             VStack(alignment: .leading){
                 Text("Today").bold().font(.largeTitle).foregroundColor(.blue)
-                    .frame(height: 40)
                 Divider()
-                dayTimeView(timeName: "morning")
+                dayTimeView(timeName: "morning",buttonColor: .blue)
                 Divider()
-                dayTimeView(timeName: "noon")
+                dayTimeView(timeName: "noon",buttonColor: .blue)
                 Divider()
-                dayTimeView(timeName: "afternoon")
-                
+                dayTimeView(timeName: "afternoon",buttonColor: .blue)
+                Spacer()
+            }
+            .toolbar{
+                ToolbarItem(placement: .confirmationAction){
+                    Button(action: {}){
+                        Text("完成")
+                    }
+                }
             }
         }
     }
