@@ -13,11 +13,11 @@ struct TodayView: View {
             VStack(alignment: .leading){
                 Text("Today").bold().font(.largeTitle).foregroundColor(.blue)
                 Divider()
-                dayTimeView(timeName: "morning",buttonColor: .blue)
+                dayTimeView(timeName: "morning",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Divider()
-                dayTimeView(timeName: "noon",buttonColor: .blue)
+                dayTimeView(timeName: "noon",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Divider()
-                dayTimeView(timeName: "afternoon",buttonColor: .blue)
+                dayTimeView(timeName: "afternoon",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Spacer()
             }
             .toolbar{

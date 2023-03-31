@@ -12,7 +12,7 @@ struct MainPageView: View {
     @State var isNewListSheetOn:Bool = false
     @State var isEditMode = false
     @State var searchInfo:String = ""
-    
+    @ObservedObject var mylistViewModel:MyListViewModel = MyListViewModel()
     var body: some View {
         NavigationStack{
             VStack{
@@ -25,7 +25,7 @@ struct MainPageView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 
-                MyNewListView()
+                MyNewListView(mylistViewModel: self.mylistViewModel)
                 Spacer()
             }
             .toolbar{
@@ -47,7 +47,7 @@ struct MainPageView: View {
                         Button(action: {self.isNewListSheetOn = true}){
                             Text("添加列表").font(.title2)
                         }.sheet(isPresented: self.$isNewListSheetOn){
-                           NewListSheetView(isSheetPresented: self.$isNewListSheetOn)
+                            NewListSheetView(isSheetPresented: self.$isNewListSheetOn,mylistViewModel: self.mylistViewModel)
                         }
                     }
                 }
@@ -58,9 +58,6 @@ struct MainPageView: View {
         }
     }
 }
-
-
-
 
 
 struct MainPageView_Previews: PreviewProvider {

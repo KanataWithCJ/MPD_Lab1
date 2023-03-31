@@ -44,11 +44,16 @@ struct PlanView: View {
                     Group{
                         ForEach(dayList) { list in
                             dayTimeView(timeName: list.name,dFont: list.Dfont,
-                                        buttonColor: .red)
+                                        buttonColor: .red,inputItemList: MyInputItemViewModel())
                             Divider()
                         }
                     }
                 }
+            }
+        }
+        .toolbar{
+            ToolbarItem(placement:.automatic){
+                Button("完成"){}
             }
         }
     }

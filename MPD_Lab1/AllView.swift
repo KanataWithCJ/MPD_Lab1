@@ -14,10 +14,10 @@ struct AllView: View {
                 Text("All").bold().font(.largeTitle)
                     .frame(height: 40).padding(5)
 //                Text("Remind").padding(5).foregroundColor(.blue).bold()
-                dayTimeView(timeName: "Remind", dFont: .body, buttonColor: .blue,textColor: .blue)
+                dayTimeView(timeName: "Remind", dFont: .body, buttonColor: .blue,textColor: .blue,inputItemList: MyInputItemViewModel())
                 Divider()
 //                Text("Camping").padding(5).foregroundColor(.green).bold()
-                dayTimeView(timeName: "Camping", dFont: .body, buttonColor: .green,textColor: .green)
+                dayTimeView(timeName: "Camping", dFont: .body, buttonColor: .green,textColor: .green,inputItemList: MyInputItemViewModel())
                 Divider()
             }
         }

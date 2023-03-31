@@ -8,13 +8,9 @@
 import SwiftUI
 import Foundation
 
-struct MyListEntity:Identifiable,Hashable{
+struct MyListEntity:Identifiable{
     var id: Int
     var EntityTitle:String
     var EntityColor:Color
     var EntityNum:Int
-    var NavColor:NavPage
-    enum NavPage{
-        case Blue,Green
-    }
 }

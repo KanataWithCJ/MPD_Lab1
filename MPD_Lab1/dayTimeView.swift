@@ -13,16 +13,17 @@ struct dayTimeView:View{
     var buttonColor:Color
     var textColor:Color = .gray
     var showTime:Bool = true
-    @State var inputList:[inputItemEntity] = []
+    @ObservedObject var inputItemList:MyInputItemViewModel
+//    @State var inputList:[inputItemEntity] = []
     var body: some View{
         VStack(alignment:.leading){
             Text(timeName).foregroundColor(textColor).font(dFont).padding([.leading],10)
-            ForEach($inputList){input in
-                listInputView(id:input.id,inputtext:input.text,inputnote: input.note,inputList:self.$inputList, buttonColor:self.buttonColor)
+            ForEach($inputItemList.inputItem){input in
+                listInputView(id:input.id,inputItemList:inputItemList,buttonColor:self.buttonColor)
             }
         }.onTapGesture {
-            if self.inputList.count == 0{
-                inputList.append(inputItemEntity(id: inputList.count, text: "", note: ""))
+            if self.inputItemList.inputItem.isEmpty{
+                inputItemList.Append(text: "", note: "")
             }
         }
     }
@@ -33,80 +34,62 @@ struct listInputView:View{
     @State var isButtonPushed:Bool = false
     @State var shownote:Bool = true
     @State var isEditing:Bool = true
-    @Binding var inputtext:String
-    @Binding var inputnote:String
-    @Binding var inputList:[inputItemEntity]
-    //    @Binding var
+    @State var showView:Bool = true
+    @ObservedObject var inputItemList:MyInputItemViewModel
     var buttonColor:Color = .blue
     var body: some View{
-        VStack{
-            HStack{
-                Button(action:{
-                    self.isButtonPushed.toggle()
+        if self.showView{
+            VStack{
+                HStack{
+                    Button(action:{
+                        self.isButtonPushed.toggle()
+                        if self.isButtonPushed{
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+    //                            self.isButtonPushed = false
+    //                            inputList.remove(at: id)
+                                self.showView = false
+                                inputItemList.ItemNum-=1
+                            })
+                        }
+                    }){
+                        if !self.isButtonPushed{
+                            Circle().stroke().frame(width: 30,height:30,alignment: .topLeading).foregroundColor(.gray)
+                        }else{
+                            ZStack{
+                                Circle().stroke().frame(width: 30,height:30,alignment: .topLeading)
+                                Circle().frame(width: 25,height: 25,alignment: .topLeading)
+                            }.foregroundColor(self.buttonColor)
+                        }
+                    }
+                    
                     if self.isButtonPushed{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-                            self.isButtonPushed = false
-                            inputList.remove(at: id)
-                        })
-                    }
-                }){
-                    if !self.isButtonPushed{
-                        Circle().stroke().frame(width: 30,height:30,alignment: .topLeading).foregroundColor(.gray)
+                        TextField("",text: $inputItemList.inputItem[self.id].text).font(.title2).foregroundColor(.gray)
                     }else{
-                        ZStack{
-                            Circle().stroke().frame(width: 30,height:30,alignment: .topLeading)
-                            Circle().frame(width: 25,height: 25,alignment: .topLeading)
-                        }.foregroundColor(self.buttonColor)
+                        TextField("",text: $inputItemList.inputItem[self.id].text,onEditingChanged: {
+                            self.isEditing = $0;
+                        },onCommit:{
+                            inputItemList.Append(text: "", note: "")
+    //                        inputList.append(inputItemEntity(id: inputList.count, text: "", note: ""))
+                        }).font(.title2)
+                    }
+                    
+                    if self.isEditing{
+                        Image(systemName: "info.circle")
+                            .resizable()
+                            .foregroundColor(self.buttonColor)
+                            .frame(width: 30,height: 30,alignment: .topLeading)
+                            .padding(.top,10)
                     }
                 }
-                
-                if self.isButtonPushed{
-                    TextField("",text: self.$inputtext).font(.title2).foregroundColor(.gray)
-                }else{
-                    TextField("",text: self.$inputtext,onEditingChanged: {
-                        self.isEditing = $0;
-                    },onCommit:{
-                        inputList.append(inputItemEntity(id: inputList.count, text: "", note: ""))
-                    }).font(.title2)
+                if self.shownote{
+                    TextField("添加备注",text: $inputItemList.inputItem[self.id].note,onEditingChanged: {
+                        if self.inputItemList.inputItem[self.id].note.isEmpty{
+                            self.shownote = $0
+                        }
+                    }).font(.caption).foregroundColor(.gray).padding(.leading,40)
                 }
-                
-                if self.isEditing{
-                    Image(systemName: "info.circle")
-                        .resizable()
-                        .foregroundColor(self.buttonColor)
-                        .frame(width: 30,height: 30,alignment: .topLeading)
-                        .padding(.top,10)
-                }
-            }
-            if self.shownote{
-                TextField("添加备注",text: self.$inputnote,onEditingChanged: {
-                    if self.inputnote.isEmpty{
-                        self.shownote = $0
-                    }
-                }).font(.caption).foregroundColor(.gray).padding(.leading,40)
-            }
-        }.padding(.horizontal)
+            }.padding(.horizontal)
+        }
     }
 }
 
-
-// button 1
-
-
-
-// text field big
-
-
-
-
-// image
-
-
-
-// textfield small
-
-//struct dayTimeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        dayTimeView(timeName: "Today")
-//    }
-//}

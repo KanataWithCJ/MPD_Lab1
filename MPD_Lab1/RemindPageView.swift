@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct RemindPageView: View {
-    @State var inputList:[inputItemEntity] = []
+    var title:String = "Reminders"
+    var ButtonColor:Color = .blue
+    @ObservedObject var inputItemViewModel:MyInputItemViewModel
+//    @State var inputList:[inputItemEntity] = []
     var body: some View {
         VStack{
             ScrollView{
-                Text("Reminders")
+                Text(self.title)
                     .font(.largeTitle)
-                    .foregroundColor(.blue)
+                    .foregroundColor(self.ButtonColor)
                     .bold()
                     .frame(width: 370,alignment: .leading)
                 Divider()
-                ForEach($inputList){ list in
-                    listInputView(id: list.id, inputtext: list.text, inputnote: list.note, inputList: self.$inputList)
+                ForEach(inputItemViewModel.inputItem){ list in
+                    listInputView(id: list.id,inputItemList: self.inputItemViewModel, buttonColor:self.ButtonColor)
                 }
                 
             }.onTapGesture {
-                if self.inputList.count == 0{
-                    self.inputList.append(inputItemEntity(id: self.inputList.count, text: "", note: ""))
+                if self.inputItemViewModel.inputItem.count == 0{
+                    self.inputItemViewModel.Append(text: "", note: "")
                 }
             }
             HStack{
-                Button(action: {self.inputList.append(inputItemEntity(id: self.inputList.count, text: "", note: ""))}, label: {
+                Button(action: {self.inputItemViewModel.Append(text: "", note: "")}, label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.title)
                     Text("New event")
@@ -43,8 +46,8 @@ struct RemindPageView: View {
     }
 }
 
-struct RemindView_Previews: PreviewProvider {
-    static var previews: some View {
-        RemindPageView()
-    }
-}
+//struct RemindView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RemindPageView()
+//    }
+//}

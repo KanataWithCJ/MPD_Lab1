@@ -10,8 +10,9 @@ import SwiftUI
 struct NewListSheetView: View {
     @Binding var isSheetPresented:Bool
     var colorlist:[Color] = [.red,.orange,.yellow,.green,.blue,.purple,.brown]
-    @ObservedObject var newListviewmodel = NewListViewModel()
+    @State var ChosenColorid:Int = 0
     @State var inputListName:String = ""
+    @ObservedObject var mylistViewModel:MyListViewModel
     var body: some View {
         NavigationStack{
             GeometryReader{_ in
@@ -21,12 +22,15 @@ struct NewListSheetView: View {
                         Spacer()
                         Text("New List")
                         Spacer()
-                        Button("Add"){}
+                        Button("Add"){
+                            mylistViewModel.Append(title: self.inputListName, EntityColor: self.colorlist[self.ChosenColorid], Num: 0)
+                            self.isSheetPresented = false
+                        }
                     }.padding()
                     ZStack{
                         RoundedRectangle(cornerRadius: 10).foregroundColor(.white)
                         VStack{
-                            Image(systemName: "list.bullet.circle.fill").resizable().frame(width: 100,height: 100).foregroundColor(newListviewmodel.chooseColor.opacity(0.7)).shadow(radius: 2).padding().offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                            Image(systemName: "list.bullet.circle.fill").resizable().frame(width: 100,height: 100).foregroundColor(self.colorlist[self.ChosenColorid].opacity(0.7)).shadow(radius: 2).padding().offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                             ZStack(alignment:.center){
                                 RoundedRectangle(cornerRadius: 15)
                                     .padding(.trailing,10)
@@ -42,15 +46,13 @@ struct NewListSheetView: View {
                             RoundedRectangle(cornerRadius: 15).foregroundColor(.white)
                             HStack{
                                 ForEach(0..<7){i in
-//                                    Button(action:{
-//                                        newListviewmodel.chooseColor(self.colorlist[i])
-//                                    } ){
-//                                        CircleItem(forecolor: self.colorlist[i],ChosenColor:newListviewmodel.chooseColor)
-//                                    }
-                                    CircleItem(forecolor: self.colorlist[i],ChosenColor:newListviewmodel.chooseColor)
-                                        .onTapGesture {
-                                            newListviewmodel.chooseColor(self.colorlist[i])
+                                    if self.ChosenColorid == i{
+                                        CircleItem(forecolor: colorlist[i],isChosen: true)
+                                    }else{
+                                        CircleItem(forecolor: colorlist[i],isChosen: false).onTapGesture {
+                                            self.ChosenColorid = i
                                         }
+                                    }
                                 }
                             }
                         }
@@ -63,9 +65,9 @@ struct NewListSheetView: View {
 
 struct CircleItem:View{
     var forecolor:Color = .red
-    var ChosenColor:Color = .red
+    @State var isChosen:Bool = false
     var body: some View{
-        if forecolor != ChosenColor{
+        if self.isChosen == false{
             Circle().foregroundColor(forecolor).padding(.horizontal,5)
         }else{
             ZStack{

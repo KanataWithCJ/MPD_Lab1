@@ -9,10 +9,11 @@ import SwiftUI
 
 struct MyListHeader:View{
     @Environment(\.editMode) private var editMode
-    @Binding var MyBlockLists:[MyBlockEntity]
+//    @Binding var MyBlockLists:[MyBlockEntity]
+    @ObservedObject var myblocklistViewModel:MyBlockListViewModel
     var body: some View{
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
-            ForEach(MyBlockLists) { list in
+            ForEach(myblocklistViewModel.myBlockList) { list in
                 if list.isChosen == false{
                     switch list.title{
                     case "今天":
@@ -41,59 +42,40 @@ struct MyListHeader:View{
 }
 
 struct MyNewListView: View {
-    @State var MyNewList:[MyListEntity] = [
-        MyListEntity(id: 0, EntityTitle: "Remind", EntityColor: .blue, EntityNum: 0,NavColor: .Blue),
-        MyListEntity(id: 1, EntityTitle: "Camping", EntityColor: .green, EntityNum: 1,NavColor: .Green),
-        MyListEntity(id: 2, EntityTitle: "Camping", EntityColor: .orange, EntityNum: 1,NavColor: .Green),
-        MyListEntity(id: 3, EntityTitle: "Camping", EntityColor: .yellow, EntityNum: 1,NavColor: .Green),
-        MyListEntity(id: 4, EntityTitle: "Camping", EntityColor: .purple, EntityNum: 1,NavColor: .Green),
-        MyListEntity(id: 5, EntityTitle: "Camping", EntityColor: .gray, EntityNum: 1,NavColor: .Green)
-    ]
-    
-    @State var MyBlockLists = [
-        MyBlockEntity(id: 0, title: "今天", symbol: "calendar.circle.fill", foregroundcolor: .blue),
-        MyBlockEntity(id: 1, title: "计划", symbol: "calendar.circle.fill", foregroundcolor: .red),
-        MyBlockEntity(id: 2, title: "完成", symbol: "tray.circle.fill", foregroundcolor: .gray),
-        MyBlockEntity(id: 3, title: "全部", symbol: "checkmark.circle.fill", foregroundcolor: .cyan)
-    ]
+    @ObservedObject var mylistViewModel:MyListViewModel
+    @ObservedObject var myblocklistViewModel:MyBlockListViewModel = MyBlockListViewModel()
     @Environment(\.editMode) private var editMode
     var body: some View {
         Form{
             if editMode?.wrappedValue.isEditing == false{
-                Section(header:MyListHeader(MyBlockLists: self.$MyBlockLists)){}
+                Section(header:MyListHeader(myblocklistViewModel: self.myblocklistViewModel)){}
             }else{
                 List{
-                    ForEach(0..<MyBlockLists.count) { i in
+                    ForEach(myblocklistViewModel.myBlockList) { block in
                         HStack{
-                            Button(action:{MyBlockLists[i].isChosen.toggle()}){
-                                if MyBlockLists[i].isChosen{
+                            Button(action:{myblocklistViewModel.Toggle(idx: block.id)}){
+                                if block.isChosen{
                                     Image(systemName: "circle").resizable().frame(width: 30,height: 30)
                                 }else{
                                     Image(systemName: "checkmark.circle.fill").resizable().frame(width: 30,height: 30)
                                 }
                             }
-                            Image(systemName: MyBlockLists[i].symbol).resizable().frame(width: 30,height: 30).foregroundColor(MyBlockLists[i].foregroundcolor)
-                            Text(MyBlockLists[i].title)
+                            Image(systemName: block.symbol).resizable().frame(width: 30,height: 30).foregroundColor(block.foregroundcolor)
+                            Text(block.title)
                         }
                     }
-                    .onMove{MyBlockLists.move(fromOffsets: $0, toOffset: $1)}
+                    .onMove{self.myblocklistViewModel.Move(from: $0, to: $1)}
                     
                 }
             }
             Section(header: Text("我的列表").foregroundColor(.black).font(.title).bold()){
-                ForEach(MyNewList) { list in
-                    switch list.NavColor{
-                    case .Blue:
-                        NavigationLink(destination:RemindPageView()){
-                            MyListEntityView(EntityColor: list.EntityColor, EntityTitle: list.EntityTitle, EntityNum: list.EntityNum)
-                        }
-                    case .Green:
-                        NavigationLink(destination:CampingPageView()){
-                            MyListEntityView(EntityColor: list.EntityColor, EntityTitle: list.EntityTitle, EntityNum: list.EntityNum)
-                        }
+                ForEach(mylistViewModel.myListEntities) { list in
+                    NavigationLink(destination:RemindPageView(title: list.EntityTitle,ButtonColor: list.EntityColor,inputItemViewModel:mylistViewModel.myInputItems[list.id]))
+                    {
+                        MyListEntityView(EntityColor: list.EntityColor, EntityTitle: list.EntityTitle,inputItemViewModel: mylistViewModel.myInputItems[list.id])
                     }
-                }.onDelete{MyNewList.remove(atOffsets:$0)}
-                    .onMove{MyNewList.move(fromOffsets: $0, toOffset: $1)}
+                }.onDelete{mylistViewModel.Remove(index:$0)}
+                    .onMove{mylistViewModel.Move(from: $0, to: $1)}
             }
             if self.editMode?.wrappedValue.isEditing == false{
                 TagView()
@@ -101,24 +83,24 @@ struct MyNewListView: View {
         }.animation(.default,value: editMode?.wrappedValue)
     }
 }
-    
-    
-    struct MyListEntityView:View{
-        let EntityColor:Color
-        let EntityTitle:String
-        @State var EntityNum:Int
-        var body: some View{
-            HStack{
-                Image(systemName: "list.bullet.circle.fill").resizable().frame(width: 30,height: 30).foregroundColor(self.EntityColor)
-                Text(self.EntityTitle)
-                Spacer()
-                Text("\(self.EntityNum)").foregroundColor(.gray)
-            }
+
+
+struct MyListEntityView:View{
+    let EntityColor:Color
+    let EntityTitle:String
+    @ObservedObject var inputItemViewModel:MyInputItemViewModel
+    var body: some View{
+        HStack{
+            Image(systemName: "list.bullet.circle.fill").resizable().frame(width: 30,height: 30).foregroundColor(self.EntityColor)
+            Text(self.EntityTitle)
+            Spacer()
+            Text("\(self.inputItemViewModel.ItemNum)").foregroundColor(.gray)
         }
     }
-    
-    struct MyListView_Previews: PreviewProvider {
-        static var previews: some View {
-            MyNewListView()
-        }
-    }
+}
+
+//    struct MyListView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            MyNewListView()
+//        }
+//    }
