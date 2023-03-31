@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 class MyListViewModel:ObservableObject{
-    @Published var myListEntities:[MyListEntity] = []
+    @Published var myListEntities:[MyListEntity] = [
+       
+    ]
     @Published var myInputItems:[MyInputItemViewModel] = []
     func Append(title:String,EntityColor:Color,Num:Int){
         self.myListEntities.append(MyListEntity(id: myListEntities.count, EntityTitle: title, EntityColor: EntityColor, EntityNum: Num))

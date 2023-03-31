@@ -13,7 +13,6 @@ struct MyBlockEntity:Hashable,Identifiable{
     var symbol:String
     var foregroundcolor:Color
     var isChosen:Bool = false
-    
     mutating func Toggle(){
         self.isChosen.toggle()
     }

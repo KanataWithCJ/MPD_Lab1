@@ -17,7 +17,7 @@ struct MyListHeader:View{
                 if list.isChosen == false{
                     switch list.title{
                     case "今天":
-                        NavigationLink(destination: TodayView()){
+                        NavigationLink(destination: TodayView(myblocklistViewModel: self.myblocklistViewModel)){
                             CategoricalBlockView(title: list.title, symbol: list.symbol, foreGroundColor: list.foregroundcolor)
                         }
                     case "计划":

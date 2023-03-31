@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TodayView: View {
+    @ObservedObject var myblocklistViewModel:MyBlockListViewModel
     var body: some View {
         ScrollView{
             VStack(alignment: .leading){
@@ -32,8 +33,8 @@ struct TodayView: View {
 }
 
 
-struct TodayView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodayView()
-    }
-}
+//struct TodayView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodayView()
+//    }
+//}
