@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InfoPage: View {
+struct InfoPageView: View {
     @State var isDateOn:Bool = false
     @State var isTimeOn:Bool = false
     @State var isSendMsg:Bool = false
@@ -68,8 +68,3 @@ struct InfoPage: View {
     }
 }
 
-struct InfoPage_Previews: PreviewProvider {
-    static var previews: some View {
-        InfoPage()
-    }
-}

@@ -23,14 +23,13 @@
 		0F72449D29D56C4F00C8905F /* MyInputItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F72449C29D56C4F00C8905F /* MyInputItemViewModel.swift */; };
 		0F72449F29D58B9700C8905F /* MyBlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F72449E29D58B9700C8905F /* MyBlockListViewModel.swift */; };
 		0F7C325A29C1D89400A75914 /* RemindPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325929C1D89400A75914 /* RemindPageView.swift */; };
-		0F7C325C29C1F06C00A75914 /* CampingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C325B29C1F06C00A75914 /* CampingPageView.swift */; };
 		0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */; };
 		0F8C092D29C1A860004FC24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092C29C1A860004FC24E /* Assets.xcassets */; };
 		0F8C093029C1A860004FC24E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8C092F29C1A860004FC24E /* Preview Assets.xcassets */; };
 		0F962BD829D1CB8100305FEE /* MyBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BD729D1CB8100305FEE /* MyBlockEntity.swift */; };
 		0F962BDC29D2D56D00305FEE /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BDB29D2D56D00305FEE /* TagView.swift */; };
 		0F962BDE29D302F000305FEE /* inputItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BDD29D302F000305FEE /* inputItemEntity.swift */; };
-		0F962BE029D31AED00305FEE /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BDF29D31AED00305FEE /* InfoPage.swift */; };
+		0F962BE029D31AED00305FEE /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F962BDF29D31AED00305FEE /* InfoPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		0F72449C29D56C4F00C8905F /* MyInputItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInputItemViewModel.swift; sourceTree = "<group>"; };
 		0F72449E29D58B9700C8905F /* MyBlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockListViewModel.swift; sourceTree = "<group>"; };
 		0F7C325929C1D89400A75914 /* RemindPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindPageView.swift; sourceTree = "<group>"; };
-		0F7C325B29C1F06C00A75914 /* CampingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampingPageView.swift; sourceTree = "<group>"; };
 		0F8C092529C1A85E004FC24E /* MPD_Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPD_Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPD_Lab1App.swift; sourceTree = "<group>"; };
 		0F8C092C29C1A860004FC24E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +56,7 @@
 		0F962BD729D1CB8100305FEE /* MyBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlockEntity.swift; sourceTree = "<group>"; };
 		0F962BDB29D2D56D00305FEE /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		0F962BDD29D302F000305FEE /* inputItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputItemEntity.swift; sourceTree = "<group>"; };
-		0F962BDF29D31AED00305FEE /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		0F962BDF29D31AED00305FEE /* InfoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +73,19 @@
 		0F61BD3E29C9A15B00656D18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F72449829D509E500C8905F /* ListPageView.swift */,
+				0F61BD5E29D1880E00656D18 /* MyNewListView.swift */,
+				0F962BDF29D31AED00305FEE /* InfoPageView.swift */,
+				0F61BD3A29C9A08C00656D18 /* CategoricalBlockView.swift */,
+				0F61BD4F29CBD5A600656D18 /* NewRemindSheetView.swift */,
+				0F61BD5129CC206B00656D18 /* NewListSheetView.swift */,
+				0F7C325929C1D89400A75914 /* RemindPageView.swift */,
+				0F61BD4929CAA1D200656D18 /* dayTimeView.swift */,
+				0F61BD4D29CBCE2400656D18 /* AllView.swift */,
+				0F61BD4B29CAAA2300656D18 /* CompleteView.swift */,
+				0F61BD4729CAA16300656D18 /* PlanView.swift */,
+				0F61BD4529C9EF5400656D18 /* TodayView.swift */,
+				0F962BDB29D2D56D00305FEE /* TagView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,22 +142,8 @@
 				0F61BD3E29C9A15B00656D18 /* View */,
 				0F8C092829C1A85E004FC24E /* MPD_Lab1App.swift */,
 				0F61BD5929D180B600656D18 /* MainPageView.swift */,
-				0F72449829D509E500C8905F /* ListPageView.swift */,
 				0F8C092C29C1A860004FC24E /* Assets.xcassets */,
 				0F8C092E29C1A860004FC24E /* Preview Content */,
-				0F61BD5E29D1880E00656D18 /* MyNewListView.swift */,
-				0F962BDF29D31AED00305FEE /* InfoPage.swift */,
-				0F61BD3A29C9A08C00656D18 /* CategoricalBlockView.swift */,
-				0F61BD4F29CBD5A600656D18 /* NewRemindSheetView.swift */,
-				0F61BD5129CC206B00656D18 /* NewListSheetView.swift */,
-				0F7C325929C1D89400A75914 /* RemindPageView.swift */,
-				0F7C325B29C1F06C00A75914 /* CampingPageView.swift */,
-				0F61BD4929CAA1D200656D18 /* dayTimeView.swift */,
-				0F61BD4D29CBCE2400656D18 /* AllView.swift */,
-				0F61BD4B29CAAA2300656D18 /* CompleteView.swift */,
-				0F61BD4729CAA16300656D18 /* PlanView.swift */,
-				0F61BD4529C9EF5400656D18 /* TodayView.swift */,
-				0F962BDB29D2D56D00305FEE /* TagView.swift */,
 			);
 			path = MPD_Lab1;
 			sourceTree = "<group>";
@@ -239,14 +236,13 @@
 				0F72449D29D56C4F00C8905F /* MyInputItemViewModel.swift in Sources */,
 				0F61BD4629C9EF5400656D18 /* TodayView.swift in Sources */,
 				0F61BD4C29CAAA2300656D18 /* CompleteView.swift in Sources */,
-				0F7C325C29C1F06C00A75914 /* CampingPageView.swift in Sources */,
 				0F61BD4A29CAA1D200656D18 /* dayTimeView.swift in Sources */,
 				0F72449F29D58B9700C8905F /* MyBlockListViewModel.swift in Sources */,
 				0F61BD3B29C9A08C00656D18 /* CategoricalBlockView.swift in Sources */,
 				0F8C092929C1A85E004FC24E /* MPD_Lab1App.swift in Sources */,
 				0F61BD5229CC206B00656D18 /* NewListSheetView.swift in Sources */,
 				0F962BDE29D302F000305FEE /* inputItemEntity.swift in Sources */,
-				0F962BE029D31AED00305FEE /* InfoPage.swift in Sources */,
+				0F962BE029D31AED00305FEE /* InfoPageView.swift in Sources */,
 				0F61BD5D29D1875F00656D18 /* MyListEntity.swift in Sources */,
 				0F61BD4829CAA16300656D18 /* PlanView.swift in Sources */,
 				0F72449B29D5172C00C8905F /* MyListViewModel.swift in Sources */,

@@ -12,6 +12,7 @@ struct MainPageView: View {
     @State var isNewListSheetOn:Bool = false
     @State var isEditMode = false
     @State var searchInfo:String = ""
+    @State var showDownToolbar:Bool = true
     @ObservedObject var mylistViewModel:MyListViewModel = MyListViewModel()
     var body: some View {
         NavigationStack{

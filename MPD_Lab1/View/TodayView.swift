@@ -12,13 +12,13 @@ struct TodayView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading){
-                Text("Today").bold().font(.largeTitle).foregroundColor(.blue)
+                Text("今天").bold().font(.largeTitle).foregroundColor(.blue)
                 Divider()
-                dayTimeView(timeName: "morning",buttonColor: .blue,inputItemList: MyInputItemViewModel())
+                dayTimeView(timeName: "上午",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Divider()
-                dayTimeView(timeName: "noon",buttonColor: .blue,inputItemList: MyInputItemViewModel())
+                dayTimeView(timeName: "下午",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Divider()
-                dayTimeView(timeName: "afternoon",buttonColor: .blue,inputItemList: MyInputItemViewModel())
+                dayTimeView(timeName: "今晚",buttonColor: .blue,inputItemList: MyInputItemViewModel())
                 Spacer()
             }
             .toolbar{

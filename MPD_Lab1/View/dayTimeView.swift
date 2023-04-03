@@ -35,6 +35,7 @@ struct listInputView:View{
     @State var shownote:Bool = true
     @State var isEditing:Bool = true
     @State var showView:Bool = true
+    @State var opa:Double = 1.0
     @ObservedObject var inputItemList:MyInputItemViewModel
     var buttonColor:Color = .blue
     var body: some View{
@@ -43,6 +44,9 @@ struct listInputView:View{
                 HStack{
                     Button(action:{
                         self.isButtonPushed.toggle()
+                        withAnimation(.linear(duration: 2)){
+                            self.opa = 0
+                        }
                         if self.isButtonPushed{
                             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
     //                            self.isButtonPushed = false
@@ -81,14 +85,17 @@ struct listInputView:View{
                             .padding(.top,10)
                     }
                 }
-                if self.shownote{
-                    TextField("添加备注",text: $inputItemList.inputItem[self.id].note,onEditingChanged: {
-                        if self.inputItemList.inputItem[self.id].note.isEmpty{
-                            self.shownote = $0
-                        }
-                    }).font(.caption).foregroundColor(.gray).padding(.leading,40)
+                VStack{
+                    if self.shownote{
+                        TextField("添加备注",text: $inputItemList.inputItem[self.id].note,onEditingChanged: {
+                            if self.inputItemList.inputItem[self.id].note.isEmpty{
+                                self.shownote = $0
+                            }
+                        }).font(.caption).foregroundColor(.gray).padding(.leading,40)
+                    }
+                    Divider().frame(width: 320)
                 }
-            }.padding(.horizontal)
+            }.padding(.horizontal).opacity(self.opa)
         }
     }
 }

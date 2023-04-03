@@ -27,7 +27,7 @@ struct NewRemindSheetView: View {
                 
                 Form{
                     Section{
-                        NavigationLink(destination:{InfoPage()}){Text("详细信息")}
+                        NavigationLink(destination:{InfoPageView()}){Text("详细信息")}
                     }
                     Section{
                         NavigationLink(destination:{ListPageView()}){Text("列表")}

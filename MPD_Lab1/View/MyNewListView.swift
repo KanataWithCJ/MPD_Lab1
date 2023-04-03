@@ -77,9 +77,7 @@ struct MyNewListView: View {
                 }.onDelete{mylistViewModel.Remove(index:$0)}
                     .onMove{mylistViewModel.Move(from: $0, to: $1)}
             }
-            if self.editMode?.wrappedValue.isEditing == false{
-                TagView()
-            }
+            TagView()
         }.animation(.default,value: editMode?.wrappedValue)
     }
 }
